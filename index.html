@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouhannad Allouf - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text: #334155;
+            --text-light: #64748b;
+            --text-muted: #94a3b8;
+            --border: #e2e8f0;
+            --bg: #ffffff;
+            --bg-subtle: #f8fafc;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: #f1f5f9;
+            font-size: 10pt;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--bg);
+            min-height: 297mm;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        /* ── HEADER ── */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 50%, #0c4a6e 100%);
+            color: white;
+            padding: 30px 40px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 28pt;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 13pt;
+            font-weight: 300;
+            color: var(--accent-light);
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 20px;
+            font-size: 9pt;
+            color: #cbd5e1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item svg {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .contact-item a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        /* ── MAIN LAYOUT ── */
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 195px;
+            gap: 0;
+        }
+
+        .content {
+            padding: 24px 28px 24px 36px;
+        }
+
+        .sidebar {
+            background: var(--bg-subtle);
+            padding: 24px 20px;
+            border-left: 1px solid var(--border);
+        }
+
+        /* ── SECTIONS ── */
+        .section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        /* ── SUMMARY ── */
+        .summary {
+            font-size: 10pt;
+            color: var(--text);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* ── EXPERIENCE ── */
+        .job {
+            margin-bottom: 16px;
+            page-break-inside: avoid;
+            position: relative;
+            padding-left: 14px;
+            border-left: 2px solid var(--border);
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .job-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .job-date {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .job-company {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1px;
+        }
+
+        .job-location {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .job ul {
+            padding-left: 16px;
+            margin: 0;
+        }
+
+        .job li {
+            font-size: 9pt;
+            margin-bottom: 4px;
+            line-height: 1.55;
+            color: var(--text);
+        }
+
+        .job li strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+
+        .tag {
+            font-size: 7.5pt;
+            padding: 2px 7px;
+            border-radius: 3px;
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .current-badge {
+            display: inline-block;
+            font-size: 7pt;
+            padding: 1px 6px;
+            border-radius: 3px;
+            background: var(--success);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        /* ── SIDEBAR SECTIONS ── */
+        .sb-section {
+            margin-bottom: 22px;
+        }
+
+        .sb-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .sb-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* ── SKILLS ── */
+        .skill-group {
+            margin-bottom: 10px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-label {
+            font-size: 8pt;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 3px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .skill-tag {
+            font-size: 7pt;
+            padding: 2px 5px;
+            border-radius: 2px;
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ── EDUCATION ── */
+        .edu-item {
+            margin-bottom: 10px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .edu-school {
+            font-size: 7.5pt;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .edu-year {
+            font-size: 7.5pt;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .edu-thesis {
+            font-size: 7.5pt;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        /* ── CERTIFICATIONS ── */
+        .cert-item {
+            margin-bottom: 8px;
+        }
+
+        .cert-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .cert-name {
+            font-size: 8pt;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .cert-issuer {
+            font-size: 7pt;
+            color: var(--text-muted);
+        }
+
+        .cert-link {
+            font-size: 6.5pt;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ── LANGUAGES ── */
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 8.5pt;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .lang-level {
+            color: var(--text-muted);
+            font-size: 7.5pt;
+        }
+
+        .lang-bar {
+            height: 3px;
+            background: var(--border);
+            border-radius: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lang-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            background: var(--accent);
+        }
+
+        /* ── AI TOOLS ── */
+        .ai-tool {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 5px;
+            font-size: 8pt;
+            color: var(--text);
+        }
+
+        .ai-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* ── PERSONAL ── */
+        .personal-info {
+            font-size: 7.5pt;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ── PRINT ── */
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+            }
+            .header, .sidebar, .tag, .skill-tag, .current-badge,
+            .lang-bar, .lang-bar-fill, .ai-dot {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .main {
+                display: grid;
+                grid-template-columns: 1fr 195px;
+            }
+            .job {
+                page-break-inside: avoid;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* ── LANGUAGE SWITCHER ── */
+        .lang-switch {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 100;
+            background: var(--primary);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 9pt;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-family: 'Inter', sans-serif;
+            transition: background 0.2s;
+        }
+        .lang-switch:hover { background: var(--accent); }
+        @media print { .lang-switch { display: none; } }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="ar.html" class="lang-switch" title="عرض النسخة العربية">العربية</a>
+    <div class="page">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-content">
+                <div class="name">Mouhannad Allouf</div>
+                <div class="title">Senior Software Engineer &bull; Blockchain &bull; AI-Augmented Development</div>
+                <div class="contact-row">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        (+963) 996 312 321
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        mhndalof@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <a href="https://linkedin.com/in/mouhannad-allouf-8024a216b/">linkedin.com/in/mouhannad-allouf</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                        <a href="https://github.com/allouf">github.com/allouf</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Damascus, Syria
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN LAYOUT -->
+        <div class="main">
+            <!-- LEFT: CONTENT -->
+            <div class="content">
+
+                <!-- SUMMARY -->
+                <div class="section">
+                    <div class="section-title">Professional Summary</div>
+                    <div class="summary">
+                        Software engineer holding an <strong>MSc in Big Data Systems</strong> (thesis on blockchain-based governance for public services) with over a decade of hands-on experience delivering production systems across both <strong>Web2 and Web3</strong>. Comfortable owning every stage of the software lifecycle &mdash; requirements analysis, design, implementation, testing, version control, deployment and release &mdash; and equally at home across the full stack: databases, backend services, web front-ends, mobile, desktop, and smart contracts. Routinely leverages modern AI-augmented development tools to ship faster and at higher quality.
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE -->
+                <div class="section">
+                    <div class="section-title">Experience</div>
+
+                    <!-- Takamol -->
+                    <div class="job">
+                        <div class="job-head">
+                            <div class="job-title">Deputy Head &mdash; Technical Affairs (Investment & Development) <span class="current-badge">Current</span></div>
+                            <div class="job-date">2023 &ndash; Present</div>
+                        </div>
+                        <div class="job-company">Takamol Company</div>
+                        <div class="job-location">Damascus, Syria</div>
+                        <ul>
+                            <li>Member of the company&rsquo;s business management team, responsible for specific modules of the core enterprise information system &mdash; from business need to live operation, in coordination with the external development vendor.</li>
+                            <li><strong>Requirements &amp; specifications:</strong> analyze business needs and translate them into clear functional and technical specs; author the requirement documents and prioritize the development backlog based on operational impact.</li>
+                            <li><strong>Ticket management:</strong> open development tickets, follow them up with the vendor end-to-end, review delivered work against the spec, and keep stakeholders updated on progress.</li>
+                            <li><strong>Quality assurance:</strong> design and execute test scenarios on the staging environment, approve releases to production, return tickets with detailed feedback when needed, and monitor stability after each release.</li>
+                            <li><strong>User support:</strong> run the support channels (Telegram / WhatsApp) used by system end-users; triage incoming reports, communicate with users, and convert validated issues into actionable tickets.</li>
+                            <li><strong>Reporting &amp; data extraction:</strong> write SQL queries directly against the production database to produce custom reports not exposed by the system UI, and propose new built-in reports for recurring needs.</li>
+                            <li><strong>Cross-team coordination:</strong> act as the liaison between internal departments, the development vendor, and senior management; unify requirements from different departments into a single integrated development plan.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag">Requirements Analysis</span>
+                            <span class="tag">QA &amp; Testing</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Stakeholder Management</span>
+                        </div>
+                    </div>
+
+                    <!-- HIVE -->
+                    <div class="job">
+                        <div class="job-head">
+                            <div class="job-title">Blockchain Developer</div>
+                            <div class="job-date">2021 &ndash; 2023</div>
+                        </div>
+                        <div class="job-company">HIVE Technologies</div>
+                        <div class="job-location">Remote</div>
+                        <ul>
+                            <li>Built a multi-network Web3 wallet using JavaScript, Web3.js and MultiChain APIs, supporting account management and transaction signing across several blockchain networks from a single interface.</li>
+                            <li>Contributed to a Hyperledger-based wheat supply-chain tracking platform &mdash; wrote Go chaincode (smart contracts), set up the Docker / YAML deployment configuration, and helped model the on-chain data flow between farmers, mills and government inspectors.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag">Hyperledger</span>
+                            <span class="tag">Web3.js</span>
+                            <span class="tag">Go</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Ethereum</span>
+                        </div>
+                    </div>
+
+                    <!-- Incentives -->
+                    <div class="job">
+                        <div class="job-head">
+                            <div class="job-title">Android Native & Web3 Developer</div>
+                            <div class="job-date">2021 &ndash; Nov 2025</div>
+                        </div>
+                        <div class="job-company">Incentives Company</div>
+                        <div class="job-location">Remote</div>
+                        <ul>
+                            <li><strong>PumpBNB &mdash; BNB Chain Token Launchpad:</strong> a no-code platform that lets anyone create and trade their own meme tokens on BNB Chain. Newly launched tokens trade against an automated bonding-curve pricing model until they reach a market-cap threshold, at which point liquidity is migrated to PancakeSwap and the token &ldquo;graduates&rdquo; to open trading. Designed and implemented the smart contracts, the trading API, and the web trading interface end-to-end.</li>
+                            <li><strong>FlipCoin &mdash; Provably-Fair Coin Flip on Solana:</strong> a peer-to-peer betting game where two players wager on a coin flip whose outcome is mathematically verifiable on-chain &mdash; neither the players nor the platform can predict or influence the result. Built the on-chain Solana program using a commit-reveal protocol with verifiable randomness, plus the web client and the real-time game lobby.</li>
+                            <li><strong>AI Voice-Driven Game (Unity mobile + Wear OS companion):</strong> a Unity-based Android game with live voice interaction, where in-game NPCs listen to the player and respond in real time with dynamic, context-aware dialogue. Built the OpenAI integration layer (Realtime API for streaming voice, Whisper for transcription, Chat Completion for dialogue logic), the native Android &harr; Unity bridge plugin (Java), and a Wear OS smartwatch companion app that syncs game state and player stats with the phone over the Wearable Data API. Stack spans Unity / C#, Android / Java / Kotlin, and OpenAI APIs.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag">Solidity</span>
+                            <span class="tag">Rust/Anchor</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Hardhat</span>
+                            <span class="tag">OpenAI API</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">Wear OS</span>
+                        </div>
+                    </div>
+
+                    <!-- HIAST -->
+                    <div class="job">
+                        <div class="job-head">
+                            <div class="job-title">Full-Stack Software Engineer</div>
+                            <div class="job-date">2015 &ndash; 2025</div>
+                        </div>
+                        <div class="job-company">HIAST (Higher Institute of Applied Sciences & Technology)</div>
+                        <div class="job-location">Damascus, Syria</div>
+                        <ul>
+                            <li><strong>Livestock Management CMS</strong> &mdash; Ministry of Agriculture: full-stack management system tracking livestock records, vaccinations, and farm registries across governorates, with role-based workflows for field veterinarians and central administration. <em>ASP.NET, C#, SQL Server.</em></li>
+                            <li><strong>Census Data &amp; Planning System</strong> &mdash; Ministry of Agriculture: data-collection and planning platform supporting the national agricultural census and resource planning across regions; designed the data model, the entry forms, and the planning reports. <em>Java JSF, PrimeFaces, Oracle DB.</em> Role: full-stack developer.</li>
+                            <li><strong>Job Assignment System for Graduate Engineers</strong>: information system managing the placement of newly graduated engineers in public-sector positions, including eligibility, preferences, and ranking workflows. <em>Oracle DB, Java / PrimeFaces.</em></li>
+                            <li><strong>Government Lab &amp; Certificate-Issuing Systems</strong> &mdash; Ministry of Commerce: lab sample tracking, test results, and automated certificate-issuing workflows that significantly improved turnaround time for government services. <em>Java JSF, PrimeFaces, Oracle.</em></li>
+                            <li><strong>GPS Fleet Tracking System</strong>: end-to-end vehicle tracking platform &mdash; Android client apps for drivers, Java backend services, ExtJS web dashboard for live tracking and trip history, and a REST API tying it all together.</li>
+                            <li><strong>Stock &amp; Inventory Management System</strong>: warehouse and inventory management built on Oracle Database with Oracle Developer tooling.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag">ASP.NET</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">Oracle</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">Android</span>
+                        </div>
+                    </div>
+
+                    <!-- Invest for All -->
+                    <div class="job">
+                        <div class="job-head">
+                            <div class="job-title">Full-Stack Developer &mdash; Healthcare Systems (PACS / RIS / EMR)</div>
+                            <div class="job-date">2014 &ndash; 2016</div>
+                        </div>
+                        <div class="job-company">Invest for All</div>
+                        <div class="job-location">Damascus, Syria</div>
+                        <ul>
+                            <li><strong>Healthcare R&amp;D focus:</strong> dedicated to researching and engineering software solutions for the medical sector &mdash; specifically hospital radiology workflows, medical imaging archiving, and integration with electronic medical records. Built a deep, end-to-end understanding of how a hospital&rsquo;s imaging chain works: from the moment a clinician orders an exam, through the modality (CT, MRI, X-ray, ultrasound) acquiring images, to long-term archiving, viewing, reporting, and the report flowing back to the patient&rsquo;s record.</li>
+                            <li><strong>PACS analysis &mdash; deep dive into dcm4chee:</strong> conducted an in-depth evaluation of <em>dcm4chee</em>, the leading open-source <strong>Picture Archiving and Communication System (PACS)</strong>. Studied its full architecture &mdash; the DICOM Storage SCP / SCU services, Query/Retrieve, WADO (Web Access to DICOM Objects), Modality Worklist (MWL), audit logging, and the underlying JBoss / WildFly application server. Mapped each component to its role in the clinical workflow and produced internal documentation and deployment guides.</li>
+                            <li><strong>PACS deployment &amp; configuration:</strong> installed, configured, and tuned dcm4chee on Linux servers for a clinical pilot &mdash; including DICOM storage configuration, user and role management, modality registration, study routing rules, storage hierarchy and retention policies. Connected real imaging modalities and validated end-to-end image flow (acquisition &rarr; archive &rarr; viewing).</li>
+                            <li><strong>PACS &harr; RIS integration:</strong> integrated dcm4chee with a <strong>Radiology Information System (RIS)</strong> covering the full radiology workflow. Implemented the standards-based interfaces between the two systems: <em>HL7 ORM</em> messages for order placement from RIS to PACS, <em>DICOM Modality Worklist</em> so technologists pull patient demographics and accession numbers directly onto the imaging modality, and <em>HL7 ORU</em> messages to push study status and radiology reports back into RIS and onward to the EMR. Verified patient identity matching, accession-number consistency, and study lifecycle states across the boundary.</li>
+                            <li><strong>EMR &amp; healthcare interoperability:</strong> studied the broader landscape of <strong>Electronic Medical Records (EMR)</strong> and clinical interoperability standards &mdash; HL7 v2 messaging, DICOM, and the conceptual basis for IHE profiles &mdash; with a focus on how radiology reports and imaging links surface inside a patient&rsquo;s electronic record.</li>
+                            <li><strong>Full-stack development around the platform:</strong> in parallel to the research work, developed web-based admin and reporting modules around the PACS/RIS stack, integrated open-source DICOM web viewers, and built proof-of-concept screens to demonstrate the integrated radiology workflow to stakeholders.</li>
+                            <li><strong>Deliverables:</strong> a complete technical knowledge base on open-source PACS, deployment and configuration runbooks, working integration prototypes between dcm4chee and RIS, and recommendations on viable open-source healthcare stacks for hospital-grade deployment.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag">dcm4chee</span>
+                            <span class="tag">PACS</span>
+                            <span class="tag">RIS</span>
+                            <span class="tag">EMR</span>
+                            <span class="tag">DICOM</span>
+                            <span class="tag">HL7</span>
+                            <span class="tag">Modality Worklist</span>
+                            <span class="tag">JBoss / WildFly</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: SIDEBAR -->
+            <div class="sidebar">
+
+                <!-- SKILLS -->
+                <div class="sb-section">
+                    <div class="sb-title">Technical Skills</div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Blockchain</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Solana</span>
+                            <span class="skill-tag">Ethereum</span>
+                            <span class="skill-tag">BNB Chain</span>
+                            <span class="skill-tag">Hyperledger</span>
+                            <span class="skill-tag">Anchor</span>
+                            <span class="skill-tag">Hardhat</span>
+                            <span class="skill-tag">Web3.js</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Languages</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">Go</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Rust</span>
+                            <span class="skill-tag">Solidity</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Frontend</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Tailwind</span>
+                            <span class="skill-tag">Wagmi</span>
+                            <span class="skill-tag">Zustand</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Backend & DB</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">ASP.NET</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Oracle</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Prisma</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">DevOps & Tools</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitLab CI</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Vercel</span>
+                            <span class="skill-tag">Render</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Mobile</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Android</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Unity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDUCATION -->
+                <div class="sb-section">
+                    <div class="sb-title">Education</div>
+                    <div class="edu-item">
+                        <div class="edu-degree">MSc Big Data Systems</div>
+                        <div class="edu-school">HIAST</div>
+                        <div class="edu-year">2018 &ndash; 2021</div>
+                        <div class="edu-thesis">Thesis: Blockchain-based governance model for public services</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">BSc Computer Science & IT</div>
+                        <div class="edu-school">HIAST</div>
+                        <div class="edu-year">2005 &ndash; 2010</div>
+                    </div>
+                </div>
+
+                <!-- CERTIFICATIONS -->
+                <div class="sb-section">
+                    <div class="sb-title">Certifications</div>
+                    <div class="cert-item">
+                        <div class="cert-name">Blockchain Specialization (4 courses)</div>
+                        <div class="cert-issuer">Univ. at Buffalo / Coursera &bull; 2021</div>
+                        <a class="cert-link" href="https://coursera.org/verify/specialization/YS48B2XQ2X7W" target="_blank">Verify</a>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-name">Kotlin for Java Developers</div>
+                        <div class="cert-issuer">JetBrains / Coursera &bull; 2021</div>
+                        <a class="cert-link" href="https://coursera.org/verify/D746JSAQPGU2" target="_blank">Verify</a>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-name">Cloud Computing Basics</div>
+                        <div class="cert-issuer">LearnQuest / Coursera &bull; 2021</div>
+                        <a class="cert-link" href="https://coursera.org/verify/JDTY96W9UWGG" target="_blank">Verify</a>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-name">Front-End UI: Bootstrap 4</div>
+                        <div class="cert-issuer">HKUST / Coursera &bull; 2021</div>
+                        <a class="cert-link" href="https://coursera.org/verify/PNJ83MYTHN6G" target="_blank">Verify</a>
+                    </div>
+                </div>
+
+                <!-- LANGUAGES -->
+                <div class="sb-section">
+                    <div class="sb-title">Languages</div>
+                    <div class="lang-item">
+                        <span class="lang-name">Arabic</span>
+                        <span class="lang-level">Native</span>
+                    </div>
+                    <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+                    <div class="lang-item">
+                        <span class="lang-name">English</span>
+                        <span class="lang-level">Professional</span>
+                    </div>
+                    <div class="lang-bar"><div class="lang-bar-fill" style="width:85%"></div></div>
+                    <div class="lang-item">
+                        <span class="lang-name">French</span>
+                        <span class="lang-level">Reading</span>
+                    </div>
+                    <div class="lang-bar"><div class="lang-bar-fill" style="width:40%"></div></div>
+                </div>
+
+                <!-- PERSONAL -->
+                <div class="sb-section">
+                    <div class="sb-title">Personal</div>
+                    <div class="personal-info">
+                        Born: May 22, 1985<br>
+                        Nationality: Syrian<br>
+                        Status: Married
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

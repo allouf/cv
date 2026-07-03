@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mouhannad Allouf – Senior Software Engineer CV (ENG/AR)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eef2f5;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.45;
+      color: #1a2c3e;
+      padding: 2rem 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    /* Arabic font styling & RTL */
+    #ar-content {
+      font-family: 'Cairo', 'Tajawal', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .cv-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    .cv-inner {
+      padding: 2rem 2rem 2.5rem;
+    }
+
+    /* header area */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid #e9edf2;
+    }
+
+    #ar-content .header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    /* Force LTR for contact section in English mode */
+    #en-content .contact-info,
+    #en-content .contact-info * {
+      direction: ltr !important;
+      text-align: left !important;
+    }
+
+    .name-title h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1a4b6e, #2c7da0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.4rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #2c7da0;
+      background: #e9f4f8;
+      display: inline-block;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      color: #2c4e6b;
+      background: #f8fafc;
+      padding: 0.8rem 1.2rem;
+      border-radius: 28px;
+    }
+
+    .contact-info p {
+      margin: 0.25rem 0;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    #en-content .contact-info p {
+      justify-content: flex-start;
+    }
+
+    #ar-content .contact-info p {
+      justify-content: flex-start;
+    }
+
+    .contact-info a {
+      color: #1f6392;
+      text-decoration: none;
+      border-bottom: 1px dotted #9bc2db;
+    }
+
+    .contact-info a:hover {
+      color: #0e4b70;
+    }
+
+    /* section styling */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a4b6e;
+      border-left: 5px solid #2c7da0;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.2px;
+    }
+
+    #ar-content .section-title {
+      border-left: none;
+      border-right: 5px solid #2c7da0;
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    .summary-text {
+      background: #f9fbfd;
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #1f3b4c;
+      border: 1px solid #e2edf2;
+    }
+
+    /* Justified body text (works in both LTR and RTL) */
+    .summary-text,
+    .job-description p,
+    .job-description li {
+      text-align: justify;
+    }
+
+    /* job entries */
+    .job {
+      margin-bottom: 1.8rem;
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0d3f58;
+    }
+
+    .job-date {
+      font-weight: 500;
+      color: #5a7d9a;
+      background: #eef2f6;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
+    .company-location {
+      font-weight: 500;
+      color: #3e6b8c;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .job-description {
+      margin-top: 0.75rem;
+      padding-left: 0.5rem;
+      border-left: 2px solid #d4e2ec;
+    }
+
+    #ar-content .job-description {
+      padding-left: 0;
+      padding-right: 0.5rem;
+      border-left: none;
+      border-right: 2px solid #d4e2ec;
+    }
+
+    .job-description p, .job-description li {
+      font-size: 0.92rem;
+      color: #2a485e;
+      margin-bottom: 0.45rem;
+      line-height: 1.45;
+    }
+
+    .job-description ul {
+      margin: 0.5rem 0 0.5rem 1.4rem;
+    }
+
+    #ar-content .job-description ul {
+      margin: 0.5rem 1.4rem 0.5rem 0;
+    }
+
+    .tech-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+
+    .tech-tag {
+      background: #eef2fa;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1f6392;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.8rem;
+      background: #fafcff;
+      padding: 1rem 1.2rem;
+      border-radius: 24px;
+      border: 1px solid #e6edf4;
+    }
+
+    .skill-cat {
+      font-weight: 700;
+      color: #1c5a7e;
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+    }
+
+    .skill-items {
+      font-size: 0.85rem;
+      color: #2c5a77;
+      line-height: 1.4;
+    }
+
+    .cert-item, .lang-item, .personal-item {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, #cbdde9, transparent);
+    }
+
+    /* Language Toggle Button */
+    .lang-toggle {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+    .toggle-btn {
+      background: white;
+      border: 1.5px solid #2c7da0;
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #2c7da0;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0f7fc;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .toggle-btn:hover {
+      background: #2c7da0;
+      color: white;
+      border-color: #2c7da0;
+    }
+    #ar-content .toggle-btn {
+      direction: ltr;
+    }
+
+    @media (max-width: 750px) {
+      .cv-inner {
+        padding: 1.5rem;
+      }
+      .header {
+        flex-direction: column;
+      }
+      #ar-content .header {
+        flex-direction: column;
+      }
+      .contact-info {
+        text-align: left;
+        width: 100%;
+      }
+      #en-content .contact-info {
+        text-align: left !important;
+      }
+      .two-columns {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .job-header {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .lang-toggle {
+        justify-content: flex-start;
+      }
+    }
+
+    a {
+      transition: color 0.2s;
+    }
+    strong.bold-thesis {
+      font-weight: 700;
+    }
+  
+    /* ===== combined print (EN + AR in one document) ===== */
+    .lang-toggle { display: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    #ar-content {
+      page-break-before: always;
+      direction: rtl;
+      text-align: right;
+      font-family: 'Cairo', 'Tajawal', 'Segoe UI', system-ui, sans-serif;
+    }
+    @page { size: A4; margin: 9mm; }
+    @media print {
+      body { background: white; padding: 0; }
+      .cv-card { box-shadow: none; border-radius: 0; max-width: none; }
+      .job, .section { page-break-inside: avoid; }
+      a { border-bottom: none; }
+    }
+
+  </style>
+  <!-- Google Fonts for Arabic support -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="cv-card">
+  <div class="cv-inner">
+    <!-- language selector button -->
+    <div class="lang-toggle">
+      <button class="toggle-btn" id="langSwitchBtn">🇸🇦 العربية / EN</button>
+    </div>
+
+    <!-- ========================= ENGLISH CONTENT (default) ========================= -->
+    <div id="en-content">
+      <div class="header">
+        <div class="name-title">
+          <h1>Mouhannad Allouf</h1>
+          <div class="tagline">Senior Software Engineer • Blockchain • AI-Augmented Development</div>
+        </div>
+        <div class="contact-info">
+          <p>📞 (+963) 996 312 321</p>
+          <p>✉️ <a href="mailto:mhndalof@gmail.com">mhndalof@gmail.com</a></p>
+          <p>🔗 <a href="#">linkedin.com/in/mouhannad-allouf</a> &nbsp;|&nbsp; <a href="#">github.com/allouf</a></p>
+          <p>📍 Damascus, Syria</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary-text">
+          Software engineer holding an MSc in Big Data Systems (thesis on <strong class="bold-thesis">blockchain-based governance model for public services</strong>) with over a decade of hands-on experience delivering production systems across both Web2 and Web3. Comfortable owning every stage of the software lifecycle — requirements analysis, design, implementation, testing, version control, deployment and release — and proficient across the entire full stack: databases, data migration & ETL, backend services, web front-ends, mobile, desktop, and smart contracts. Routinely leverages modern AI-augmented development tools to ship faster and at higher quality.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Experience</div>
+        <!-- Backend Developer - Middle East Commerce -->
+        <div class="job">
+          <div class="job-header"><span class="job-title">Backend Developer</span><span class="job-date">1/3/2026 – 1/6/2024</span></div>
+          <div class="company-location"><a href="https://beta.mideastcom.net" target="_blank">Middle East Commerce</a> · Remote</div>
+          <div class="job-description"><p>Backend developer on a multi-vendor e-commerce marketplace platform serving the GCC and Middle East region. Designed and implemented payment interfaces and gateway integrations supporting both fiat and cryptocurrency transactions.</p><ul><li>Built payment integration layer supporting multiple fiat gateways (Stripe Connect, PayTabs, HyperPay, Moyasar, Tap Payments) and local payment methods (Mada, STC Pay, SADAD, KNET, COD) across Saudi Arabia, UAE, Kuwait, and Egypt.</li><li>Integrated crypto payment processing via NOWPayments gateway, enabling BTC, ETH, and USDT transactions for platform fees and subscriptions.</li><li>Implemented a 3-balance custodial wallet model (available / pending / locked) with Stripe Checkout fiat top-ups, refund handling via webhooks, and full audit trail with balance-before/balance-after tracking.</li><li>Developed dual-flow payment architecture: Flow A (buyer-to-seller fiat escrow with commission deduction) and Flow B (user-to-platform fees accepting fiat or crypto with MEEC token discount).</li><li>Built webhook handlers for payment provider IPN notifications, ensuring reliable transaction state synchronization and reconciliation.</li></ul><div class="tech-tag-list"><span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span><span class="tech-tag">Stripe</span><span class="tech-tag">NOWPayments</span><span class="tech-tag">MySQL</span><span class="tech-tag">REST API</span></div></div>
+        </div>
+        <!-- Deputy Head - Takamol: end date updated -->
+        <div class="job">
+          <div class="job-header"><span class="job-title">Deputy Head — Technical Affairs (Investment & Development)</span><span class="job-date">2023 – 1/6/2026</span></div>
+          <div class="company-location">Takamol Company · Damascus, Syria</div>
+          <div class="job-description"><p>Member of the company's business management team, responsible for specific modules of the core enterprise information system — from business need to live operation, in coordination with the system's owner company, Mahroukat (Ministry of Oil).</p><ul><li>Requirements and specifications: analyze business needs and translate them into clear functional and technical specs. Author the requirement documents and prioritize the development backlog based on operational impact.</li><li>Ticket management: open development tickets, follow them up with the owner company end-to-end, review delivered work against the spec, and keep stakeholders updated on progress.</li><li>Quality assurance: design and execute test scenarios on the staging environment, approve releases to production, return tickets with detailed feedback when needed, and monitor stability after each release.</li><li>User support: run the support channels (Telegram / WhatsApp) used by system end-users. Triage incoming reports, communicate with users, and convert validated issues into actionable tickets.</li><li>Reporting and data extraction: write SQL queries directly against the production database to produce custom reports not exposed by the system UI, and propose new built-in reports for recurring needs.</li><li>Data quality and reconciliation: detect and investigate duplicate or conflicting records via SQL, and reconcile data between system modules and the owner company's records.</li><li>Cross-team coordination: act as the liaison between internal departments, the owner company (Mahroukat), and senior management. Unify requirements from different departments into a single integrated development plan.</li></ul><div class="tech-tag-list"><span class="tech-tag">Requirements Analysis</span><span class="tech-tag">QA & Testing</span><span class="tech-tag">SQL</span><span class="tech-tag">MySQL</span><span class="tech-tag">Stakeholder Management</span></div></div>
+        </div>
+        <!-- Blockchain Developer -->
+        <div class="job">
+          <div class="job-header"><span class="job-title">Blockchain Developer</span><span class="job-date">2021 – 2023</span></div>
+          <div class="company-location">HIVE Technologies · Remote</div>
+          <div class="job-description"><p>Built a multi-network Web3 wallet using JavaScript, Web3.js and MultiChain APIs, supporting account management and transaction signing across several blockchain networks from a single interface.</p><p>Contributed to a Hyperledger-based wheat supply-chain tracking platform. Wrote Go chaincode (smart contracts), set up the Docker / YAML deployment configuration, and helped model the on-chain data flow between farmers, mills and government inspectors.</p><div class="tech-tag-list"><span class="tech-tag">Hyperledger</span><span class="tech-tag">Web3.js</span><span class="tech-tag">Go</span><span class="tech-tag">Docker</span><span class="tech-tag">Ethereum</span></div></div>
+        </div>
+        <!-- Android Native & Web3 Developer -->
+        <div class="job">
+          <div class="job-header"><span class="job-title">Android Native & Web3 Developer</span><span class="job-date">2021 – Nov 2025</span></div>
+          <div class="company-location">Incentives Company · Remote</div>
+          <div class="job-description"><p><strong>PumpBNB — BNB Chain Token Launchpad:</strong> a no-code platform that lets anyone create and trade their own meme tokens on BNB Chain. Newly launched tokens trade against an automated bonding-curve pricing model until they reach a market-cap threshold, at which point liquidity is migrated to PancakeSwap and the token "graduates" to open trading. Designed and implemented the smart contracts, the trading API, and the web trading interface end-to-end.</p><p><strong>FlipCoin — Provably-Fair Coin Flip on Solana:</strong> a peer-to-peer betting game where two players wager on a coin flip whose outcome is mathematically verifiable on-chain. Neither the players nor the platform can predict or influence the result. Built the on-chain Solana program using a commit-reveal protocol with verifiable randomness, plus the web client and the real-time game lobby.</p><p><strong>AI Voice-Driven Game (Unity mobile + Wear OS companion):</strong> a Unity-based Android game with live voice interaction, where in-game NPCs listen to the player and respond in real time with dynamic, context-aware dialogue. Built the OpenAI integration layer (Realtime API for streaming voice, Whisper for transcription, Chat Completion for dialogue logic), the native Android ↔ Unity bridge plugin (Java), and a Wear OS smartwatch companion app that syncs game state and player stats with the phone over the Wearable Data API. Stack spans Unity / C#, Android / Java / Kotlin, and OpenAI APIs.</p><div class="tech-tag-list"><span class="tech-tag">Solidity</span><span class="tech-tag">Rust/Anchor</span><span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">Hardhat</span><span class="tech-tag">OpenAI API</span><span class="tech-tag">Unity</span><span class="tech-tag">Kotlin</span><span class="tech-tag">Android</span><span class="tech-tag">Wear OS</span></div></div>
+        </div>
+        <!-- HIAST Full-Stack -->
+        <div class="job">
+          <div class="job-header"><span class="job-title">Full-Stack Software Engineer</span><span class="job-date">2015 – 2025</span></div>
+          <div class="company-location">HIAST (Higher Institute of Applied Sciences & Technology) · Damascus, Syria</div>
+          <div class="job-description"><ul><li>Livestock Management CMS — Ministry of Agriculture: full-stack management system tracking livestock records, vaccinations, and farm registries across governorates, with role-based workflows for field veterinarians and central administration. Designed the database schema, built the vaccination-scheduling logic and the statistical reports used by the central directorate. ASP.NET, C#, SQL Server.</li><li>Census Data & Planning System — Ministry of Agriculture: data-collection and planning platform supporting the national agricultural census and resource planning across regions. Designed the data model and the entry forms, built the planning reports, and developed ETL routines to bring previous census rounds from legacy export files into the new Oracle schema — mapping, validation and reconciliation included. Java JSF, PrimeFaces, Oracle DB.</li><li>Job Assignment System for Graduate Engineers: information system managing the placement of newly graduated engineers in public-sector positions, including eligibility, preferences, and ranking workflows. Implemented the eligibility rules, the candidate-ranking logic and the official assignment reports. Oracle DB, Java / PrimeFaces.</li><li>Government Lab & Certificate-Issuing Systems — Ministry of Commerce: lab sample tracking, test results, and automated certificate-issuing workflows that significantly improved turnaround time for government services. Built the sample-registration and results-entry screens and the automated certificate generation and printing. Java JSF, PrimeFaces, Oracle.</li><li>GPS Fleet Tracking System: end-to-end vehicle tracking platform — Android client apps for drivers, Java backend services, ExtJS web dashboard for live tracking and trip history, and a REST API tying it all together. Onboarding existing customers meant migrating their fleets from previous tracking platforms — mapped and transformed customer, vehicle, device and driver records, imported them in controlled batches, and resolved duplicate / conflicting records (IMEI, SIM and device assignments) before go-live.</li><li>Stock & Inventory Management System: warehouse and inventory management built on Oracle Database with Oracle Developer tooling — stock-movement workflows, item catalogues, and stocktaking and audit reports.</li></ul><div class="tech-tag-list"><span class="tech-tag">Data Migration / ETL</span><span class="tech-tag">PL/SQL</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">Java</span><span class="tech-tag">Oracle</span><span class="tech-tag">SQL Server</span><span class="tech-tag">Android</span></div></div>
+        </div>
+        <!-- Healthcare role (EN) -->
+        <div class="job">
+          <div class="job-header"><span class="job-title">Full-Stack Developer — Healthcare Systems (PACS / RIS / EMR)</span><span class="job-date">2014 – 2016</span></div>
+          <div class="company-location">Invest for All · Damascus, Syria</div>
+          <div class="job-description"><p><strong>End-to-end radiology informatics and PACS/RIS integration.</strong> Researched, deployed and integrated <strong>dcm4chee</strong> (open-source PACS) for hospital imaging workflows. Engineered full interoperability between PACS, RIS and EMR via DICOM and HL7 standards. Implemented Modality Worklist (MWL), HL7 ORM order insertion, ORU results reporting, and bi-directional study status sync. Led technical evaluation of DICOM storage SCP/SCU, WADO, and IHE profiles.</p><p>Configured production-ready PACS on Linux with JBoss/WildFly, connected real modalities (CT, MRI, US), validated image archiving and study routing. Developed custom web admin modules, DICOM viewers, and reporting dashboards around the healthcare stack. Produced complete deployment runbooks and integration prototypes for hospital-grade rollout.</p><div class="tech-tag-list"><span class="tech-tag">dcm4chee</span><span class="tech-tag">PACS</span><span class="tech-tag">RIS</span><span class="tech-tag">EMR</span><span class="tech-tag">DICOM</span><span class="tech-tag">HL7</span><span class="tech-tag">Modality Worklist</span><span class="tech-tag">JBoss/WildFly</span><span class="tech-tag">Java</span><span class="tech-tag">Linux</span></div></div>
+        </div>
+      </div>
+
+      <div class="section"><div class="section-title">Technical Skills</div><div class="skills-grid"><div><div class="skill-cat">Blockchain</div><div class="skill-items">Solana, Ethereum, BNB Chain, Hyperledger, Anchor, Hardhat, Web3.js</div></div><div><div class="skill-cat">Languages</div><div class="skill-items">TypeScript, JavaScript, Java, Kotlin, C#, Go, Python, PHP, Laravel, Rust, Solidity, SQL</div></div><div><div class="skill-cat">Frontend</div><div class="skill-items">React, Next.js, Tailwind, Wagmi, Zustand</div></div><div><div class="skill-cat">Backend & DB</div><div class="skill-items">Node.js, Express, ASP.NET, Laravel, PHP, PostgreSQL, MySQL, Oracle, Redis, Prisma</div></div><div><div class="skill-cat">Data & Migration</div><div class="skill-items">ETL, data mapping & transformation, validation & reconciliation, PL/SQL, batch imports, rollback & recovery</div></div><div><div class="skill-cat">DevOps & Tools</div><div class="skill-items">Docker, Git, GitLab CI, Linux, Vercel, Render</div></div><div><div class="skill-cat">Mobile</div><div class="skill-items">Android, Kotlin, Unity</div></div></div></div>
+
+      <div class="two-columns"><div><div class="section"><div class="section-title">Education</div><div class="job-description" style="border-left-color:#cbdde9;"><p><strong>MSc Big Data Systems</strong><br>HIAST · 2018 – 2021<br>Thesis: <strong class="bold-thesis">blockchain-based governance model for public services</strong></p><p style="margin-top:0.5rem;"><strong>BSc Computer Science & IT</strong><br>HIAST · 2005 – 2010</p></div></div><div class="section"><div class="section-title">Certifications</div><div class="cert-item">Blockchain Specialization (4 courses) — Univ. at Buffalo / Coursera • 2021 <span style="color:#2c7da0;">Verify</span></div><div class="cert-item">Kotlin for Java Developers — JetBrains / Coursera • 2021 <span style="color:#2c7da0;">Verify</span></div><div class="cert-item">Cloud Computing Basics — LearnQuest / Coursera • 2021 <span style="color:#2c7da0;">Verify</span></div><div class="cert-item">Front-End UI: Bootstrap 4 — HKUST / Coursera • 2021 <span style="color:#2c7da0;">Verify</span></div></div></div><div><div class="section"><div class="section-title">Languages</div><div class="lang-item"><strong>Arabic</strong> — Native</div><div class="lang-item"><strong>English</strong> — Good</div><div class="lang-item"><strong>French</strong> — Reading</div></div><div class="section"><div class="section-title">Personal</div><div class="personal-item">Born: May 22, 1985</div><div class="personal-item">Nationality: Syrian</div><div class="personal-item">Status: Married</div></div></div></div>
+      <hr><div style="font-size:0.75rem; text-align:center; color:#6f8eac;">• Full-stack & Web3 engineer • 10+ years production experience •</div>
+    </div>
+
+    <!-- ========================= ARABIC CONTENT (name fixed, header order fixed, blockchain-> سلاسل كتل, language level Good, personal style "أجيد") ========================= -->
+    <div id="ar-content">
+      <div class="header">
+        <!-- name on the right (since RTL) but we place name-title first, then contact-info, visually name will be on right due to flex row -->
+        <div class="name-title"><h1>مهند ألوف</h1><div class="tagline">مهندس برمجيات • سلاسل كتل • تطوير مدعوم بالذكاء الاصطناعي</div></div>
+        <div class="contact-info"><p>📞 (+963) 996 312 321</p><p>✉️ <a href="mailto:mhndalof@gmail.com">mhndalof@gmail.com</a></p><p>🔗 <a href="#">linkedin.com/in/mouhannad-allouf</a> &nbsp;|&nbsp; <a href="#">github.com/allouf</a></p><p>📍 دمشق، سوريا</p></div>
+      </div>
+      <div class="section"><div class="section-title">الملخص المهني</div><div class="summary-text">مهندس برمجيات حاصل على ماجستير في أنظمة البيانات الضخمة (أطروحة حول <strong>نموذج الحوكمة القائم على سلاسل الكتل للخدمات العامة</strong>) مع أكثر من عقد من الخبرة العملية في تقديم أنظمة إنتاج في Web2 و Web3. أجيد إدارة كل مرحلة من دورة حياة البرمجيات — تحليل المتطلبات، التصميم، التطوير، الاختبار، التحكم بالإصدارات، النشر والإصدار — كما أجيد العمل على كامل طبقات المشروع: قواعد البيانات، ترحيل البيانات و ETL، الخدمات الخلفية، الواجهات الأمامية للويب، تطبيقات الجوال، سطح المكتب والعقود الذكية. أعتمد بانتظام على أدوات التطوير الحديثة المعززة بالذكاء الاصطناعي للتسليم بسرعة وجودة أعلى.</div></div>
+      <div class="section"><div class="section-title">الخبرات</div>
+        <!-- Backend Developer - Middle East Commerce - Arabic -->
+        <div class="job"><div class="job-header"><span class="job-title">مطور Backend</span><span class="job-date">1/3/2026 – 1/6/2024</span></div><div class="company-location"><a href="https://beta.mideastcom.net" target="_blank">Middle East Commerce</a> · عن بُعد</div><div class="job-description"><p>مطور backend على منصة سوق تجارة إلكترونية متعددة البائعين تخدم منطقة الخليج والشرق الأوسط. تصميم وتنفيذ واجهات الدفع وتكامل بوابات الدفع لدعم المعاملات بالعملات fiat والعملات المشفرة.</p><ul><li>بناء طبقة تكامل الدفع الداعمة لبوابات fiat المتعددة (Stripe Connect، PayTabs، HyperPay، Moyasar، Tap Payments) وطرق الدفع المحلية (مدى، STC Pay، SADAD، KNET، الدفع عند الاستلام) عبر السعودية والإمارات والكويت ومصر.</li><li>تكامل معالجة الدفع بالعملات المشفرة عبر بوابة NOWPayments، لتمكين معاملات BTC و ETH و USDT لرسوم المنصة والاشتراكات.</li><li>تنفيذ نموذج محفظة حاضنة بثلاثة أرصدة (متاح / معلق / مقفل) مع إيداع عبر Stripe Checkout، ومعالجة الاستردادات عبر Webhooks، وسجل تدقيق كامل بتتبع الرصيد قبل وبعد كل معاملة.</li><li>تطوير هندسة دفع مزدوجة: المسار أ (وساطة بين المشتري والبائع مع خصم العمولة) والمسار ب (رسوم المستخدم للمنصة تقبل fiat أو crypto مع خصم رمز MEEC).</li><li>بناء معالجات Webhook لإشعارات IPN من مزودي الدفع، لضمان مزامنة حالة المعاملات والمطابقة بشكل موثوق.</li></ul><div class="tech-tag-list"><span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span><span class="tech-tag">Stripe</span><span class="tech-tag">NOWPayments</span><span class="tech-tag">MySQL</span><span class="tech-tag">REST API</span></div></div></div>
+        <!-- Deputy Head Takamol Arabic - end date updated -->
+        <div class="job"><div class="job-header"><span class="job-title">نائب رئيس الشؤون الفنية (استثمار وتطوير)</span><span class="job-date">2023 – 1/6/2026</span></div><div class="company-location">شركة تكامل · دمشق، سوريا</div><div class="job-description"><p>عضو في فريق الإدارة التنفيذية للشركة، مسؤول عن وحدات محددة في نظام المعلومات الأساسي — من الاحتياج التشغيلي وحتى التشغيل الفعلي، بالتنسيق مع الشركة المالكة للنظام — شركة محروقات (وزارة النفط).</p><ul><li>تحليل وجمع المتطلبات وتحويلها إلى مواصفات وظيفية وتقنية واضحة.</li><li>إدارة التذاكر مع الشركة المالكة والمتابعة ومراجعة التسليم واعتماد الإصدارات.</li><li>ضمان الجودة: تصميم وتنفيذ سيناريوهات الاختبار، وإعادة التذاكر عند الحاجة.</li><li>دعم المستخدمين عبر قنوات التواصل وتحويل المشكلات إلى تذاكر قابلة للتطوير.</li><li>استخراج البيانات والتقارير عبر SQL مباشرة من قاعدة بيانات الإنتاج.</li><li>جودة البيانات والمطابقة: اكتشاف وتحرّي السجلات المكررة أو المتعارضة عبر SQL، ومطابقة البيانات بين وحدات النظام وسجلات الشركة المالكة.</li><li>التنسيق بين الإدارات الداخلية والشركة المالكة (محروقات) والإدارة العليا لتوحيد خطط التطوير.</li></ul><div class="tech-tag-list"><span class="tech-tag">تحليل المتطلبات</span><span class="tech-tag">ضمان الجودة والاختبارات</span><span class="tech-tag">SQL</span><span class="tech-tag">MySQL</span><span class="tech-tag">إدارة الأطراف المعنية</span></div></div></div>
+        <div class="job"><div class="job-header"><span class="job-title">مطور سلاسل كتل (Blockchain)</span><span class="job-date">2021 – 2023</span></div><div class="company-location">HIVE Technologies · عن بُعد</div><div class="job-description"><p>بناء محفظة Web3 متعددة الشبكات باستخدام JavaScript و Web3.js وواجهات MultiChain، تدير الحسابات والتوقيع عبر عدة شبكات سلاسل كتل.</p><p>المساهمة في منصة تتبع سلسلة توريد القمح باستخدام Hyperledger. كتابة chaincode بلغة Go، إعداد Docker / YAML، والنمذجة لتدفق البيانات بين المزارعين والمطاحن والمفتشين الحكوميين.</p><div class="tech-tag-list"><span class="tech-tag">Hyperledger</span><span class="tech-tag">Web3.js</span><span class="tech-tag">Go</span><span class="tech-tag">Docker</span><span class="tech-tag">Ethereum</span></div></div></div>
+        <div class="job"><div class="job-header"><span class="job-title">مطور تطبيقات Android أصلية و Web3</span><span class="job-date">2021 – نوفمبر 2025</span></div><div class="company-location">Incentives Company · عن بُعد</div><div class="job-description"><p><strong>PumpBNB — منصة إطلاق رموز على BNB Chain:</strong> منصة بدون كود تسمح لأي شخص بإنشاء وتداول رموز ميم على BNB Chain، مع نموذج تسعير منحنى الربط التلقائي حتى الوصول إلى حد معين ثم ترحيل السيولة إلى PancakeSwap.</p><p><strong>FlipCoin — لعبة رمي عملة عادلة على Solana:</strong> لعبة رهان بين لاعبين تعتمد على بروتوكول إلتزام وكشف مع عشوائية قابلة للتحقق رياضياً على السلسلة. بناء برنامج Solana والواجهة ولوبي اللعبة.</p><p><strong>لعبة مدفوعة بالصوت والذكاء الاصطناعي (Unity + Wear OS):</strong> لعبة Android تعتمد على Unity مع تفاعل صوتي مباشر، وشخصيات NPC تستمع للاعب وترد عليه بحوار سياقي ديناميكي. تم بناء طبقة تكامل OpenAI (Realtime API، Whisper، Chat Completion) ووصلة Android ↔ Unity (Java) وتطبيق ساعة Wear OS لمزامنة حالة اللعبة.</p><div class="tech-tag-list"><span class="tech-tag">Solidity</span><span class="tech-tag">Rust/Anchor</span><span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">Hardhat</span><span class="tech-tag">OpenAI API</span><span class="tech-tag">Unity</span><span class="tech-tag">Kotlin</span><span class="tech-tag">Android</span><span class="tech-tag">Wear OS</span></div></div></div>
+        <div class="job"><div class="job-header"><span class="job-title">مهندس برمجيات شامل (Full-Stack)</span><span class="job-date">2015 – 2025</span></div><div class="company-location">HIAST (المعهد العالي للعلوم التطبيقية والتكنولوجيا) · دمشق، سوريا</div><div class="job-description"><ul><li>نظام إدارة الثروة الحيوانية — وزارة الزراعة: نظام متكامل لتتبع سجلات الثروة الحيوانية واللقاحات وسجلات المزارع في المحافظات، مع صلاحيات للأطباء البيطريين الميدانيين والإدارة المركزية. تصميم قاعدة البيانات وبناء منطق جدولة اللقاحات والتقارير الإحصائية. ASP.NET, C#, SQL Server.</li><li>نظام التعداد والبيانات التخطيطية — وزارة الزراعة: تصميم نموذج البيانات ونماذج الإدخال وبناء تقارير التخطيط، مع تطوير أدوات ETL لنقل بيانات دورات التعداد السابقة من ملفات التصدير القديمة إلى قاعدة Oracle الجديدة — شاملةً المطابقة والتحقق والتسوية. Java JSF, PrimeFaces, Oracle DB.</li><li>نظام توزيع المهندسين الخريجين على الوظائف العامة: تنفيذ قواعد الأهلية ومنطق الترتيب والمفاضلة والتقارير الرسمية للتعيين. Oracle DB, Java / PrimeFaces.</li><li>أنظمة المختبرات الحكومية وإصدار الشهادات — وزارة التجارة: بناء شاشات تسجيل العينات وإدخال النتائج والإصدار والطباعة الآلية للشهادات بما حسّن زمن إنجاز المعاملات. Java JSF, PrimeFaces, Oracle.</li><li>نظام تتبع المركبات GPS: منصة متكاملة — تطبيقات Android للسائقين، خدمات Java خلفية، لوحة تحكم ExtJS للتتبع الحي وسجل الرحلات، و REST API يربطها جميعاً. وتضمّن ضم الزبائن الحاليين ترحيل أساطيلهم من منصات تتبع سابقة — مطابقة وتحويل بيانات الزبائن والمركبات والأجهزة والسائقين، استيرادها على دفعات مضبوطة، ومعالجة السجلات المكررة والمتعارضة (IMEI و SIM وارتباط الأجهزة) قبل الإطلاق.</li><li>نظام إدارة المخزون والمستودعات باستخدام Oracle — حركات المواد، فهارس الأصناف، وتقارير الجرد والتدقيق.</li></ul><div class="tech-tag-list"><span class="tech-tag">ترحيل البيانات / ETL</span><span class="tech-tag">PL/SQL</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">Java</span><span class="tech-tag">Oracle</span><span class="tech-tag">SQL Server</span><span class="tech-tag">Android</span></div></div></div>
+        <!-- Healthcare Role - Arabic (Summarized) -->
+        <div class="job"><div class="job-header"><span class="job-title">مطور شامل — أنظمة الرعاية الصحية (PACS/RIS/EMR)</span><span class="job-date">2014 – 2016</span></div><div class="company-location">Invest for All · دمشق، سوريا</div><div class="job-description"><p><strong>أنظمة معلومات الأشعة والتكامل بين PACS/RIS.</strong> بحث ونشر ودمج <strong>dcm4chee</strong> (نظام PACS مفتوح المصدر) لسير عمل التصوير الطبي في المستشفيات. هندسة التشغيل البيني الكامل بين PACS و RIS و EMR عبر معايير DICOM و HL7. تنفيذ قائمة عمل الأجهزة (MWL) وإدخال أوامر HL7 ORM وتقارير ORU ومزامنة حالة الفحص.</p><p>إعداد PACS جاهز للإنتاج على Linux مع JBoss/WildFly، ربط أجهزة التصوير الحقيقية (CT، MRI، US)، التحقق من أرشفة الصور وتوجيه الفحوصات. تطوير وحدات إدارة ويب مخصصة وعارض DICOM ولوحات تحكم تقارير. إنتاج دلائل النشر الكاملة والنماذج الأولية للتكامل الجاهز للنشر على مستوى المستشفيات.</p><div class="tech-tag-list"><span class="tech-tag">dcm4chee</span><span class="tech-tag">PACS</span><span class="tech-tag">RIS</span><span class="tech-tag">EMR</span><span class="tech-tag">DICOM</span><span class="tech-tag">HL7</span><span class="tech-tag">Modality Worklist</span><span class="tech-tag">JBoss/WildFly</span><span class="tech-tag">Java</span><span class="tech-tag">Linux</span></div></div></div>
+      </div>
+
+      <div class="section"><div class="section-title">المهارات التقنية</div><div class="skills-grid"><div><div class="skill-cat">البلوكتشين</div><div class="skill-items">Solana, Ethereum, BNB Chain, Hyperledger, Anchor, Hardhat, Web3.js</div></div><div><div class="skill-cat">لغات البرمجة</div><div class="skill-items">TypeScript, JavaScript, Java, Kotlin, C#, Go, Python, PHP, Laravel, Rust, Solidity, SQL</div></div><div><div class="skill-cat">الواجهات الأمامية</div><div class="skill-items">React, Next.js, Tailwind, Wagmi, Zustand</div></div><div><div class="skill-cat">الخوادم وقواعد البيانات</div><div class="skill-items">Node.js, Express, ASP.NET, Laravel, PHP, PostgreSQL, MySQL, Oracle, Redis, Prisma</div></div><div><div class="skill-cat">البيانات والترحيل</div><div class="skill-items">ETL، مطابقة وتحويل البيانات، التحقق والمطابقة، PL/SQL، الاستيراد على دفعات، إجراءات التراجع والاسترداد</div></div><div><div class="skill-cat">DevOps والأدوات</div><div class="skill-items">Docker, Git, GitLab CI, Linux, Vercel, Render</div></div><div><div class="skill-cat">تطبيقات الموبايل</div><div class="skill-items">Android, Kotlin, Unity</div></div></div></div>
+
+      <div class="two-columns"><div><div class="section"><div class="section-title">التعليم</div><div class="job-description" style="border-right-color:#cbdde9;"><p><strong>ماجستير في أنظمة البيانات الضخمة</strong><br>المعهد العالي للعلوم التطبيقية والتكنولوجيا (HIAST) · 2018 – 2021<br>رسالة الماجستير: نموذج حوكمة قائم على البلوك تشين للخدمات العامة</p><p style="margin-top:0.5rem;"><strong>إجازة في علوم الحاسوب وتقانة المعلومات</strong><br>المعهد العالي للعلوم التطبيقية والتكنولوجيا (HIAST) · 2005 – 2010</p></div></div><div class="section"><div class="section-title">الشهادات</div><div class="cert-item">تخصّص البلوك تشين (4 مساقات) — جامعة بافالو / Coursera • 2021 <a href="https://coursera.org/verify/specialization/YS48B2XQ2X7W" target="_blank" style="color:#2c7da0;">تحقّق</a></div><div class="cert-item">Kotlin لمطوّري Java — JetBrains / Coursera • 2021 <a href="https://coursera.org/verify/D746JSAQPGU2" target="_blank" style="color:#2c7da0;">تحقّق</a></div><div class="cert-item">أساسيّات الحوسبة السحابية — LearnQuest / Coursera • 2021 <a href="https://coursera.org/verify/JDTY96W9UWGG" target="_blank" style="color:#2c7da0;">تحقّق</a></div><div class="cert-item">الواجهات الأمامية: Bootstrap 4 — HKUST / Coursera • 2021 <a href="https://coursera.org/verify/PNJ83MYTHN6G" target="_blank" style="color:#2c7da0;">تحقّق</a></div></div></div><div><div class="section"><div class="section-title">اللغات</div><div class="lang-item"><strong>العربية</strong> — اللغة الأم</div><div class="lang-item"><strong>الإنجليزية</strong> — جيد</div><div class="lang-item"><strong>الفرنسية</strong> — قراءة</div></div><div class="section"><div class="section-title">معلومات شخصية</div><div class="personal-item">تاريخ الميلاد: 22 أيار 1985</div><div class="personal-item">الجنسية: سورية</div><div class="personal-item">الحالة الاجتماعية: متزوّج</div></div></div></div>
+      <hr><div style="font-size:0.75rem; text-align:center; color:#6f8eac;">• مهندس برمجيات شامل و Web3 • أكثر من 10 سنوات خبرة في أنظمة الإنتاج •</div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.GeneratedMSBuildEditorConfig.editorconfig
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.AssemblyInfoInputs.cache
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.AssemblyInfo.cs
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.csproj.CoreCompileInputs.cache
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.sourcelink.json
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.csproj.AssemblyReference.cache
+F:\CV\src\TaskProcessing.Shared\bin\Debug\net8.0\TaskProcessing.Shared.deps.json
+F:\CV\src\TaskProcessing.Shared\bin\Debug\net8.0\TaskProcessing.Shared.dll
+F:\CV\src\TaskProcessing.Shared\bin\Debug\net8.0\TaskProcessing.Shared.pdb
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.dll
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\refint\TaskProcessing.Shared.dll
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\TaskProcessing.Shared.pdb
+F:\CV\src\TaskProcessing.Shared\obj\Debug\net8.0\ref\TaskProcessing.Shared.dll

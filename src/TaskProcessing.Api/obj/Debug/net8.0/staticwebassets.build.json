@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "TnRFm/V47cYWLtK8C6pYEB5mxe9GgHv92aXbTj/PQUU=",
+  "Source": "TaskProcessing.Api",
+  "BasePath": "_content/TaskProcessing.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

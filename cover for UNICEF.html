@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Letter – Mouhannad Allouf · UNICEF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            padding: 2rem 1rem;
+        }
+
+        .letter {
+            max-width: 880px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.18);
+            padding: 2.8rem 3rem;
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 600px) {
+            .letter {
+                padding: 1.8rem 1.2rem;
+            }
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1.5rem;
+        }
+
+        .name-title {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .name {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b1c3a;
+        }
+
+        .badge {
+            background: #eef2f9;
+            color: #1e3a6b;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.3rem 1.1rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.8rem;
+            margin-top: 0.6rem;
+            font-size: 0.95rem;
+            color: #2c3e5c;
+        }
+
+        .contact-row span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .divider {
+            color: #bcc9db;
+        }
+
+        .greeting {
+            margin: 1.2rem 0 1.5rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #1f2a44;
+        }
+
+        .greeting strong {
+            font-weight: 600;
+            color: #0b1c3a;
+        }
+
+        .body-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e2b41;
+        }
+
+        .body-text p {
+            margin: 0;
+        }
+
+        .signature-block {
+            margin-top: 2.5rem;
+            border-top: 1px solid #eef2f6;
+            padding-top: 2rem;
+        }
+
+        .signature {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #0b1c3a;
+        }
+
+        .signature-details {
+            margin-top: 0.4rem;
+            font-size: 0.95rem;
+            color: #2f405e;
+        }
+
+        .print-note {
+            margin-top: 2.2rem;
+            font-size: 0.8rem;
+            color: #6f7d98;
+            border-top: 1px dashed #dce2ec;
+            padding-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .print-btn {
+            background: #1e3a6b;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.15s;
+            box-shadow: 0 2px 6px rgba(24, 48, 96, 0.2);
+        }
+
+        .print-btn:hover {
+            background: #14305a;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0.2in;
+            }
+            .letter {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0.2in;
+            }
+            .print-btn {
+                display: none;
+            }
+            .print-note {
+                border-top: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter" id="coverLetter">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="name-title">
+                <span class="name">Mouhannad Allouf</span>
+                <span class="badge">Digital · IT · Systems</span>
+            </div>
+            <div class="contact-row">
+                <span>📍 Damascus, Syria</span>
+                <span class="divider">|</span>
+                <span>📧 mhndalof@gmail.com</span>
+                <span class="divider">|</span>
+                <span>📞 +963 996 312 321</span>
+            </div>
+        </div>
+
+        <!-- SALUTATION -->
+        <div class="greeting">
+            <p style="margin-bottom: 0.8rem;"><strong>UNICEF Syria</strong><br />Damascus, Syria</p>
+            <p><strong>Re: Communication Officer (Digital)</strong></p>
+            <p style="margin-top: 0.5rem;">Dear Hiring Manager,</p>
+        </div>
+
+        <!-- BODY -->
+        <div class="body-text">
+            <p>
+                I am writing to apply for the Communication Officer (Digital) position at UNICEF Syria in Damascus. With over a decade of experience in technology, systems development, and digital content creation, combined with a deep understanding of the Syrian context, I am confident in my ability to contribute to UNICEF's mission of advocating for children's rights and amplifying their voices through impactful digital communication.
+            </p>
+            <p>
+                In my recent role as an <strong>Android Native & Web3 Developer</strong>, I designed and developed interactive digital experiences, including a Unity-based AI voice-driven game with real-time voice interaction and dynamic dialogue. This experience has strengthened my ability to produce engaging multimedia content, manage digital platforms, and leverage emerging technologies to create compelling narratives. I have also developed and maintained websites, managed online presence, and created digital content that resonates with diverse audiences.
+            </p>
+            <p>
+                My technical background, including an <strong>MSc in Big Data Systems</strong>, has equipped me with strong analytical skills and the ability to monitor and evaluate the performance of digital communication strategies. I am proficient in using data to optimize content, measure engagement, and ensure that communication efforts are evidence-based and impactful. I am also experienced in social media management, content creation, and visual storytelling.
+            </p>
+            <p>
+                I have extensive experience collaborating with government ministries, international partners, and diverse stakeholders in Syria. This has given me a strong understanding of the country's context and the importance of clear, sensitive, and effective communication in humanitarian settings. I am fluent in Arabic and English, based in Damascus, and available for immediate employment.
+            </p>
+            <p>
+                I am deeply committed to UNICEF's mission to protect and empower children. I believe my technical skills, creative abilities, and local knowledge make me a strong candidate to support UNICEF Syria's communication and advocacy efforts.
+            </p>
+            <p>
+                Thank you for considering my application. I look forward to the opportunity to contribute to UNICEF's vital work in Syria.
+            </p>
+        </div>
+
+        <!-- SIGNATURE -->
+        <div class="signature-block">
+            <div class="signature">Yours sincerely,</div>
+            <div style="margin-top: 1.2rem; font-weight: 500; font-size: 1.1rem;">Mouhannad Allouf</div>
+            <div class="signature-details">
+                mhndalof@gmail.com · +963 996 312 321<br />
+                <a href="https://allouf.github.io/cv" target="_blank" style="color: #1e3a6b;">allouf.github.io/cv</a>
+            </div>
+        </div>
+
+        <!-- PRINT / PDF HELPER -->
+        <div class="print-note">
+            <span>📄 Cover Letter · Communication Officer (Digital) · UNICEF</span>
+            <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+        </div>
+
+    </div>
+</body>
+</html>

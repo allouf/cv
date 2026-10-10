@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "ErKH2mzxF16uX1SU4BuEMKGrPeGF6i7CHdtiMIe0Zid1YNu6TD6IV01FpYOTqPz/HK87yyjxlECzl78uiEbQzw==",
+  "success": true,
+  "projectFilePath": "F:\\CV\\src\\TaskProcessing.Shared\\TaskProcessing.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mohanad\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\grpc\\2.46.6\\grpc.2.46.6.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\grpc.core.api\\2.46.6\\grpc.core.api.2.46.6.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\grpc.tools\\2.46.6\\grpc.tools.2.46.6.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\rabbitmq.client\\6.8.1\\rabbitmq.client.6.8.1.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\mohanad\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

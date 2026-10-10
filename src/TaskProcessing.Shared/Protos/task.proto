@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskProcessing.Shared";
+
+package tasks;
+
+service TaskService {
+  rpc SubmitTask (TaskRequest) returns (TaskResponse);
+  rpc GetTaskStatus (StatusRequest) returns (StatusResponse);
+}
+
+message TaskRequest {
+  string name = 1;
+  string payload = 2;
+  int32 priority = 3;
+}
+
+message TaskResponse {
+  string task_id = 1;
+}
+
+message StatusRequest {
+  string task_id = 1;
+}
+
+message StatusResponse {
+  string task_id = 1;
+  string status = 2;
+  string result = 3;
+}

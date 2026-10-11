@@ -380,7 +380,6 @@
     }
   
     /* ===== combined print (EN + AR in one document) ===== */
-    .lang-toggle { display: none; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     #ar-content {
       page-break-before: always;
@@ -390,6 +389,7 @@
     }
     @page { size: A4; margin: 9mm; }
     @media print {
+      .lang-toggle { display: none; }
       html { font-size: 13px; }
       body { background: white; padding: 0; line-height: 1.35; }
       .cv-card { box-shadow: none; border-radius: 0; max-width: none; }

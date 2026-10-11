@@ -419,6 +419,25 @@
       var m = /[?&]lang=(en|ar|both)/.exec(window.location.search);
       document.documentElement.classList.add('lang-' + (m ? m[1] : 'both'));
     })();
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('langSwitchBtn');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var html = document.documentElement;
+          var current = html.className.match(/lang-(en|ar|both)/);
+          var next = 'both';
+          if (current) {
+            if (current[1] === 'en') next = 'ar';
+            else if (current[1] === 'ar') next = 'en';
+            else next = 'en';
+          }
+          html.classList.remove('lang-en', 'lang-ar', 'lang-both');
+          html.classList.add('lang-' + next);
+          var url = window.location.pathname + '?lang=' + next + window.location.hash;
+          history.replaceState(null, '', url);
+        });
+      }
+    });
   </script>
 </head>
 <body>
